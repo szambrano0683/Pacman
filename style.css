@@ -1,0 +1,144 @@
+/*reseteo de estilos*/
+* {
+    margin: 0; /*elimina márgenes por defecto*/
+    padding: 0; /*elimina espacios por defecto*/
+    box-sizing: border-box; /*bordes incluidos en el tamaño*/
+    font-family: "Poppins", sans-serif; /*fuente principal*/
+}
+
+/*estilos para el cuerpo de la página*/
+body {
+    background-color: #f4f6f8; /*color de fondo claro*/
+}
+
+/*barra lateral*/
+.sidebar {
+    position: fixed; /*barra fija al lado izquierdo*/
+    left: 0;
+    top: 0;
+    width: 75px; /*ancho de la barra*/
+    height: 100%; /*altura completa*/
+    background-color: #1e1e2f; /*color de fondo oscuro*/
+    padding: 20px; /*espaciado interno*/
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /*sombra para profundidad*/
+    transition: all 0.4s ease; /*transición suave*/
+    overflow: hidden;
+}
+
+/*mouse pasa por la barra lateral*/
+.barra:hover {
+    width: 240px; /*ancho expandido*/
+}
+
+/*lista del menú*/
+.barra ul {
+    list-style: none; /*elimina viñetas*/
+    height: 100%; /*altura completa*/
+    display: flex; /*flexbox para alineación*/
+    flex-direction: column; /*elementos en columna*/
+    justify-content: space-between; /*espacio entre elementos*/
+}
+
+/*logo superior*/
+.logo {
+    border-bottom: 1px solid #2c3342; /*línea divisoria*/
+    margin-bottom: 15px; /*espacio inferior*/
+}
+
+/*elemento del logo*/
+.logo a {
+    text-decoration: none; /*sin subrayado*/
+    color: #ffffff; /*color blanco*/
+    display: flex; /*flexbox para alineación*/
+    align-items: center; /*centrado vertical*/
+    padding: 10px 0; /*espaciado vertical*/
+}
+
+/*icono del logo*/
+.logo .icono {
+    font-size: 1.6rem; /*tamaño del icono*/
+    margin-right: 12px; /*espacio a la derecha*/
+}
+
+/* texto del logo */
+.logo .texto {
+    font-size: 1.2rem; /*tamaño de fuente*/
+    font-weight: 600; /*negrita*/
+    opacity: 0; /*invisible por defecto*/
+    transition: opacity 0.4s ease; /*transición suave*/
+}
+
+/*mostrar texto al expandir barra*/
+.barra:hover .logo .texto {
+    opacity: 1; /*visible*/
+}
+
+/* item del menú */
+.barra ul li {
+    display: flex; /*alinea icono y texto horizontalmente*/
+    align-items: center; /*centra verticalmente*/
+    text-decoration: none; /*sin subrayado*/
+    color: #b8b8c9; /*color gris claro*/
+    padding: 10px 0; /*espaciado vertical*/
+    transition: all 0.3s ease; /*transición suave*/
+}
+
+/* mause pasa por el item del menú */
+.barra ul li:hover {
+    background-color: #1f2937; /*fondo más oscuro*/
+    color: #ffffff; /*texto blanco*/
+    cursor: pointer; /*cambia el cursor*/
+}
+
+/* iconos */
+
+.barra ul li .icono {
+    font-size: 1.4rem; /*tamaño del icono*/
+    font-weight: 500; /*peso de fuente*/
+    opacity: 0; /* oculta el texto al ocultar la barra */
+    transition: opacity 0.4s ease; /*transición suave*/
+}
+
+/* expancion de la barra*/
+.barra:hover ul li .icono {
+    opacity: 1; /*muestra el texto al expandir la barra*/
+}
+
+/* bajo el menú */
+.bloquefinal {
+    margin-top: auto; /*empuja hacia abajo*/
+    border-top: 1px solid #2c3342; /*línea divisoria*/
+    padding-top: 15px; /*espacio superior*/
+    display: flex; /*centrar contenido*/
+    justify-content: center; /*centrar horizontalmente*/
+}
+
+/* imagen del logo */
+.cuadroImagen {
+    width: 45px; /*ancho del cuadro*/
+    height: 45px; /*alto del cuadro*/
+    overflow: hidden; /*oculta desbordes*/
+    border-radius: 10px; /*bordes redondeados*/
+    background-color: #ffffff; /*color de fondo blanco*/
+    display: flex; /*flexbox para centrar contenido*/
+    align-items: center; /*centrar verticalmente*/
+    justify-content: center; /*centrar horizontalmente*/
+}
+
+/* imagen dentro del cuadro */
+.cuadroImagen img {
+    width: 100%; /*ancho completo*/
+    height: auto; /*altura automática*/
+    object-fit: cover; /*cubre el cuadro*/
+    transition: transform 0.4s ease; /*transición suave*/
+}
+
+/* efecto al pasar el mouse sobre la imagen */
+.cuadroImagen:hover img {
+    transform: scale(1.1); /*agranda la imagen*/
+}   
+
+/* scroll bar oculto */
+.barra::-webkit-scrollbar {
+    display: none; /*oculta la barra de desplazamiento*/
+}
