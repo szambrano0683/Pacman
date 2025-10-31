@@ -1,144 +1,156 @@
-/*reseteo de estilos*/
+/* ==== RESETEO GENERAL ==== */
 * {
-    margin: 0; /*elimina márgenes por defecto*/
-    padding: 0; /*elimina espacios por defecto*/
-    box-sizing: border-box; /*bordes incluidos en el tamaño*/
-    font-family: "Poppins", sans-serif; /*fuente principal*/
+    margin: 0; /* Quita los márgenes por defecto */
+    padding: 0; /* Quita los rellenos por defecto */
+    box-sizing: border-box; /* Mantiene tamaños consistentes incluyendo padding y borde */
+    font-family: 'Poppins', sans-serif; /* Fuente moderna y legible */
 }
 
-/*estilos para el cuerpo de la página*/
+/* ==== FONDO DEL CUERPO ==== */
 body {
-    background-color: #f4f6f8; /*color de fondo claro*/
+    background: #f4f6f8; /* Color de fondo claro */
+    display: flex; /* Centra el contenido */
+    justify-content: flex-start; /* Deja espacio a la izquierda */
+    align-items: center; /* Centra verticalmente */
+    min-height: 100vh; /* Ocupa toda la altura de la pantalla */
+    padding: 15px; /* Espacio alrededor del contenido */
 }
 
-/*barra lateral*/
-.sidebar {
-    position: fixed; /*barra fija al lado izquierdo*/
-    left: 0;
-    top: 0;
-    width: 75px; /*ancho de la barra*/
-    height: 100%; /*altura completa*/
-    background-color: #1e1e2f; /*color de fondo oscuro*/
-    padding: 20px; /*espaciado interno*/
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /*sombra para profundidad*/
-    transition: all 0.4s ease; /*transición suave*/
-    overflow: hidden;
+/* ==== CAJA DEL MENÚ ==== */
+.barra {
+    position: relative; /* Posicionamiento relativo (ya no fija a la pantalla) */
+    height: 90vh; /* Ocupa el 90% de la altura de la ventana */
+    width: 75px; /* Ancho inicial cerrado */
+    background: #111827; /* Fondo oscuro del menú */
+    padding: 10px 14px; /* Espacio interno */
+    border-radius: 25px; /* Bordes redondeados tipo “caja” */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Sombra para efecto de profundidad */
+    transition: all 0.4s ease; /* Transiciones suaves */
+    overflow: hidden; /* Oculta contenido que sobrepase los bordes */
 }
 
-/*mouse pasa por la barra lateral*/
+/* Cuando el usuario pasa el mouse sobre la caja del menú */
 .barra:hover {
-    width: 240px; /*ancho expandido*/
+    width: 240px; /* Se expande el ancho */
 }
 
-/*lista del menú*/
+/* ==== LISTA DEL MENÚ ==== */
 .barra ul {
-    list-style: none; /*elimina viñetas*/
-    height: 100%; /*altura completa*/
-    display: flex; /*flexbox para alineación*/
-    flex-direction: column; /*elementos en columna*/
-    justify-content: space-between; /*espacio entre elementos*/
+    list-style: none; /* Quita los puntos */
+    height: 100%; /* Ocupa todo el alto de la barra */
+    display: flex; /* Usa flexbox */
+    flex-direction: column; /* Elementos uno debajo del otro */
+    justify-content: space-between; /* Distribuye los elementos */
 }
 
-/*logo superior*/
+/* ==== LOGO ==== */
 .logo {
-    border-bottom: 1px solid #2c3342; /*línea divisoria*/
-    margin-bottom: 15px; /*espacio inferior*/
+    border-bottom: 1px solid #2c3342; /* Línea separadora */
+    margin-bottom: 15px; /* Espacio debajo */
 }
 
-/*elemento del logo*/
 .logo a {
-    text-decoration: none; /*sin subrayado*/
-    color: #ffffff; /*color blanco*/
-    display: flex; /*flexbox para alineación*/
-    align-items: center; /*centrado vertical*/
-    padding: 10px 0; /*espaciado vertical*/
+    text-decoration: none; /* Sin subrayado */
+    color: #fff; /* Texto blanco */
+    display: flex; /* Alinea ícono y texto */
+    align-items: center; /* Centra verticalmente */
+    padding: 10px 0; /* Espacio vertical */
 }
 
-/*icono del logo*/
 .logo .icono {
-    font-size: 1.6rem; /*tamaño del icono*/
-    margin-right: 12px; /*espacio a la derecha*/
+    font-size: 1.6rem; /* Tamaño del ícono */
+    margin-right: 12px; /* Espacio entre ícono y texto */
 }
 
-/* texto del logo */
 .logo .texto {
-    font-size: 1.2rem; /*tamaño de fuente*/
-    font-weight: 600; /*negrita*/
-    opacity: 0; /*invisible por defecto*/
-    transition: opacity 0.4s ease; /*transición suave*/
+    font-size: 1rem; /* Tamaño de texto */
+    font-weight: 600; /* Texto más grueso */
+    opacity: 0; /* Oculto cuando el menú está cerrado */
+    transition: opacity 0.3s ease; /* Transición suave */
 }
 
-/*mostrar texto al expandir barra*/
+/* Muestra el texto del logo al expandirse */
 .barra:hover .logo .texto {
-    opacity: 1; /*visible*/
+    opacity: 1;
 }
 
-/* item del menú */
+/* ==== ELEMENTOS DEL MENÚ ==== */
 .barra ul li {
-    display: flex; /*alinea icono y texto horizontalmente*/
-    align-items: center; /*centra verticalmente*/
-    text-decoration: none; /*sin subrayado*/
-    color: #b8b8c9; /*color gris claro*/
-    padding: 10px 0; /*espaciado vertical*/
-    transition: all 0.3s ease; /*transición suave*/
+    margin: 10px 0; /* Espacio vertical entre ítems */
 }
 
-/* mause pasa por el item del menú */
-.barra ul li:hover {
-    background-color: #1f2937; /*fondo más oscuro*/
-    color: #ffffff; /*texto blanco*/
-    cursor: pointer; /*cambia el cursor*/
+.barra ul li a {
+    display: flex; /* Alinea ícono y texto */
+    align-items: center; /* Centra verticalmente */
+    text-decoration: none; /* Sin subrayado */
+    color: #d1d5db; /* Gris claro */
+    padding: 10px; /* Espacio interno */
+    border-radius: 12px; /* Bordes redondeados en cada opción */
+    transition: all 0.3s ease; /* Animación suave */
 }
 
-/* iconos */
-
-.barra ul li .icono {
-    font-size: 1.4rem; /*tamaño del icono*/
-    font-weight: 500; /*peso de fuente*/
-    opacity: 0; /* oculta el texto al ocultar la barra */
-    transition: opacity 0.4s ease; /*transición suave*/
+/* Efecto al pasar el mouse sobre cada opción */
+.barra ul li a:hover {
+    background: #1f2937; /* Fondo más claro */
+    color: #fff; /* Texto blanco */
+    transform: translateX(4px); /* Desplaza levemente hacia la derecha */
 }
 
-/* expancion de la barra*/
-.barra:hover ul li .icono {
-    opacity: 1; /*muestra el texto al expandir la barra*/
+/* ==== ICONOS ==== */
+.icono {
+    min-width: 40px; /* Mantiene ancho fijo para íconos */
+    text-align: center; /* Centra el ícono */
+    font-size: 1.3rem; /* Tamaño del ícono */
 }
 
-/* bajo el menú */
-.bloquefinal {
-    margin-top: auto; /*empuja hacia abajo*/
-    border-top: 1px solid #2c3342; /*línea divisoria*/
-    padding-top: 15px; /*espacio superior*/
-    display: flex; /*centrar contenido*/
-    justify-content: center; /*centrar horizontalmente*/
+/* ==== TEXTOS ==== */
+.texto {
+    font-size: 0.95rem; /* Tamaño del texto */
+    font-weight: 500; /* Peso medio */
+    opacity: 0; /* Oculto cuando la barra está cerrada */
+    transition: opacity 0.3s ease; /* Suaviza la aparición */
 }
 
-/* imagen del logo */
+/* Muestra el texto cuando la barra está expandida */
+.barra:hover .texto {
+    opacity: 1;
+}
+
+/* ==== BLOQUE FINAL ==== */
+.bloqueFinal {
+    margin-top: auto; /* Empuja el bloque hacia el fondo */
+    padding-top: 15px; /* Espacio superior */
+    border-top: 1px solid #2c3342; /* Línea separadora */
+    display: flex; /* Centra contenido */
+    justify-content: center; /* Centra horizontalmente */
+}
+
+/* ==== CUADRO DE LA IMAGEN (PAC-MAN) ==== */
 .cuadroImagen {
-    width: 45px; /*ancho del cuadro*/
-    height: 45px; /*alto del cuadro*/
-    overflow: hidden; /*oculta desbordes*/
-    border-radius: 10px; /*bordes redondeados*/
-    background-color: #ffffff; /*color de fondo blanco*/
-    display: flex; /*flexbox para centrar contenido*/
-    align-items: center; /*centrar verticalmente*/
-    justify-content: center; /*centrar horizontalmente*/
+    width: 45px; /* Ancho del cuadro */
+    height: 45px; /* Alto del cuadro */
+    border-radius: 10px; /* Bordes redondeados */
+    overflow: hidden; /* Oculta lo que sobresale */
+    background-color: #fff; /* Fondo blanco */
+    display: flex; /* Centra imagen */
+    align-items: center; /* Centra verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+    transition: transform 0.3s ease; /* Efecto suave al pasar el mouse */
 }
 
-/* imagen dentro del cuadro */
 .cuadroImagen img {
-    width: 100%; /*ancho completo*/
-    height: auto; /*altura automática*/
-    object-fit: cover; /*cubre el cuadro*/
-    transition: transform 0.4s ease; /*transición suave*/
+    width: 100%; /* Imagen ocupa todo el cuadro */
+    height: 100%;
+    object-fit: cover; /* Mantiene proporciones */
+    transition: transform 0.4s ease; /* Suaviza el efecto zoom */
 }
 
-/* efecto al pasar el mouse sobre la imagen */
+/* Efecto de zoom sobre el GIF */
 .cuadroImagen:hover img {
-    transform: scale(1.1); /*agranda la imagen*/
-}   
+    transform: scale(1.1);
+}
 
-/* scroll bar oculto */
+/* ==== OCULTAR SCROLL ==== */
 .barra::-webkit-scrollbar {
-    display: none; /*oculta la barra de desplazamiento*/
+    display: none; /* Oculta barra de desplazamiento */
 }
